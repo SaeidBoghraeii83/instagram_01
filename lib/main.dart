@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:instagram_01/home_screen.dart';
 
 void main() {
   runApp(Application());
@@ -11,8 +12,21 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Splash_Screen(),
+      home: Home_Screen(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                15,
+              ), // Adjust the value for desired roundness
+            ),
+            minimumSize: Size(129, 46),
+            backgroundColor: Color.fromRGBO(243, 83, 131, 1),
+          ),
+        ),
+      ),
     );
   }
 }
