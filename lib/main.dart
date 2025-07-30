@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:instagram_01/home_screen.dart';
+import 'package:instagram_01/switch_acount_screen.dart';
 import 'package:instagram_01/login_screen.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_01/home_screen.dart';
+import 'package:instagram_01/switch_acount_screen.dart';
 
 class Login_Screen extends StatelessWidget {
   const Login_Screen({super.key});
