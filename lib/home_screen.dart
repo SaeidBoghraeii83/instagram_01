@@ -11,7 +11,17 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
-  var itemName = ['saeed', 'ali', 'mamad', 'reza', 'farzad', 'ahmad', 'mahsa'];
+  var itemName = ['Malihe', 'Poyan_02', 'Bardiya', 'Eman', 'Reza'];
+  var itemTitile = [
+    'پویان رحمانی',
+    'ملیحه عباسی',
+    'مانی خوشبین',
+    'بردیا سعادت',
+    'ایمان احمدی',
+  ];
+
+  var imageNameP = ['p5', 'p4', 'p1', 'p2', 'p3'];
+  var imageNameS = ['f5', 'f4', 'f1', 'f2', 'f3'];
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +35,12 @@ class _Home_ScreenState extends State<Home_Screen> {
           SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
               return Column(
-                children: [_getInformationProfile(), _getPostItem()],
+                children: [
+                  _getInformationProfile(imageNameS[index], itemTitile[index]),
+                  _getPostItem(imageNameP[index]),
+                ],
               );
-            }, childCount: 2),
+            }, childCount: 5),
           ),
         ],
       ),
@@ -81,7 +94,7 @@ class _Home_ScreenState extends State<Home_Screen> {
         itemBuilder: (context, index) {
           return index == 0
               ? _getAddStory()
-              : _getStoryListBox(itemName[index]);
+              : _getStoryListBox(itemName[index], imageNameS[index]);
         },
       ),
     );
@@ -141,7 +154,7 @@ class _Home_ScreenState extends State<Home_Screen> {
     );
   }
 
-  Widget _getStoryListBox(String itemName) {
+  Widget _getStoryListBox(String itemName, String imageName) {
     return Container(
       margin: EdgeInsets.only(top: 30, left: 10, right: 10, bottom: 10),
       child: Column(
@@ -158,7 +171,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               child: Container(
                 height: 58,
                 width: 58,
-                child: Image.asset('images/profile.png'),
+                child: Image.asset('images/$imageName.png'),
               ),
             ),
           ),
@@ -169,7 +182,7 @@ class _Home_ScreenState extends State<Home_Screen> {
     );
   }
 
-  _getInformationProfile() {
+  _getInformationProfile(String imageName, String titleText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
@@ -180,7 +193,9 @@ class _Home_ScreenState extends State<Home_Screen> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
 
-              image: DecorationImage(image: AssetImage('images/profile.png')),
+              image: DecorationImage(
+                image: AssetImage('images/$imageName.png'),
+              ),
             ),
           ),
           SizedBox(width: 10),
@@ -188,7 +203,7 @@ class _Home_ScreenState extends State<Home_Screen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Saeid Boghraeii',
+                '$titleText',
                 style: TextStyle(color: Colors.white, fontFamily: 'GB'),
               ),
               Text(
@@ -208,7 +223,7 @@ class _Home_ScreenState extends State<Home_Screen> {
     );
   }
 
-  Widget _getPostItem() {
+  Widget _getPostItem(String imageName) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, right: 10, left: 10, bottom: 30),
       child: Container(
@@ -218,24 +233,20 @@ class _Home_ScreenState extends State<Home_Screen> {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Positioned(top: 1, child: Image.asset('images/post_cover.png')),
             Positioned(
-              bottom: 2,
+              top: 1,
+              child: Image.asset('images/$imageName.png', height: 400),
+            ),
+            Positioned(
+              bottom: 0,
               child: ClipRRect(
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
                   child: Container(
-                    width: 350,
+                    width: 340,
                     height: 48,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(255, 255, 255, 0.5),
-                          Color.fromRGBO(255, 255, 255, 0.2),
-                        ], // Gradient from blue to red
-                        begin: Alignment.topLeft, // Starts from top-left
-                        end: Alignment.bottomRight, // Ends at bottom-right
-                      ),
+                      color: Colors.black,
 
                       borderRadius: BorderRadius.circular(8),
                     ),
