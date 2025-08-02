@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:instagram_01/activity_screen.dart';
 import 'package:instagram_01/home_screen.dart';
 import 'package:instagram_01/post_screen.dart';
 import 'package:instagram_01/search_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            minimumSize: Size(30, 30),
             backgroundColor: Color(0xffF35383),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: Post_Screen(),
+      home: Activity_Screen(),
     );
   }
 }
