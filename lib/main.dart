@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_01/activity_screen.dart';
 import 'package:instagram_01/home_screen.dart';
 import 'package:instagram_01/post_screen.dart';
+import 'package:instagram_01/profile_screen.dart';
 import 'package:instagram_01/search_screen.dart';
 
 void main() => runApp(MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: Activity_Screen(),
+      home: UserProfileScreen(),
     );
   }
 }
