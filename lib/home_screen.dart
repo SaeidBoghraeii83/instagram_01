@@ -11,17 +11,18 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
-  var itemName = ['Malihe', 'Poyan_02', 'Bardiya', 'Eman', 'Reza'];
+  var itemName = ['Hany Rambod', 'Hadi', 'Iman', 'Pouyan', 'Maliheh'];
   var itemTitile = [
-    'پویان رحمانی',
-    'ملیحه عباسی',
-    'مانی خوشبین',
-    'بردیا سعادت',
-    'ایمان احمدی',
+    'Hany Rambod',
+    'Hadi Choopan',
+    'Iman Ahmadi',
+    'Pouyan Rahmani',
+
+    'Maliheh Abbasi',
   ];
 
-  var imageNameP = ['p5', 'p4', 'p1', 'p2', 'p3'];
-  var imageNameS = ['f5', 'f4', 'f1', 'f2', 'f3'];
+  var imageNameP = ['o1', 'o2', 'o3', 'o4', 'o5'];
+  var imageNameS = ['f1', 'f2', 'f3', 'f5', 'f4'];
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +107,13 @@ class _Home_ScreenState extends State<Home_Screen> {
       leadingWidth: 150,
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Image.asset(
-          'images/moodinger_logo.png',
-          width: 200,
-          height: 200,
+        child: TextButton(
+          onPressed: () => _getButtomSheet(),
+          child: Image.asset(
+            'images/moodinger_logo.png',
+            width: 200,
+            height: 200,
+          ),
         ),
       ),
       actions: [
@@ -206,14 +210,6 @@ class _Home_ScreenState extends State<Home_Screen> {
                 '$titleText',
                 style: TextStyle(color: Colors.white, fontFamily: 'GB'),
               ),
-              Text(
-                'سعید بقرائی برنامه نویس موبایل',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'GB',
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
             ],
           ),
           Spacer(),
@@ -225,7 +221,7 @@ class _Home_ScreenState extends State<Home_Screen> {
 
   Widget _getPostItem(String imageName) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20, right: 10, left: 10, bottom: 30),
+      padding: const EdgeInsets.only(top: 5, right: 10, left: 10, bottom: 20),
       child: Container(
         width: 440,
         height: 440,
@@ -238,7 +234,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               child: Image.asset('images/$imageName.png', height: 400),
             ),
             Positioned(
-              bottom: 0,
+              bottom: 25,
               child: ClipRRect(
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),

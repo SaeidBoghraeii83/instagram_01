@@ -147,10 +147,13 @@ class Sharebottomsheet extends StatelessWidget {
   Widget _getItemGrid() {
     return Column(
       children: [
-        Container(child: Image.asset('images/f4.png')),
+        ClipRRect(
+          child: Container(child: Image.asset('images/o1.png')),
+          borderRadius: BorderRadiusGeometry.circular(16),
+        ),
         SizedBox(height: 10),
         Text(
-          'Malihe',
+          'Mani',
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'GB', fontSize: 12, color: Colors.white),
         ),
